@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Page</title>
+
+</head>
+<body>
+
+<h1>Edit Page</h1>
+
+<form id="edit-form" >
+    <label for="fName">first Name:</label><br>
+    <input type="text" id="fName" name="fName"><br>
+    <label for="lName">last Name:</label>
+    <input type="text" id="lName" name="lName"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="email"><br>
+    <button type="submit">Update</button>
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    // Fetch data of the selected item
+    fetch( `https://65cc5a54dd519126b83e4e51.mockapi.io/Register/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('fName').value = data.fName;
+            document.getElementById('lName').value = data.lName;
+            document.getElementById('email').value = data.email;
+            document.getElementById('password').value = data.password;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+    // Handle form submission
+    document.getElementById('edit-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const newfName = document.getElementById('fName').value;
+        const newlName = document.getElementById('lName').value;
+        const newEmail = document.getElementById('email').value;
+        const newPassword = document.getElementById('password').value;
+
+        // Prepare data for update
+        const newData = {
+            fName: newfName,
+            lName: newlName,
+            email: newEmail,
+            password: newPassword
+        };
+
+        // Send XHR request to update the data
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', `https://65cc5a54dd519126b83e4e51.mockapi.io/Register/${id}`, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert('Data updated successfully!');
+                window.location.href = 'advance.html'; // Redirect back to list page
+            } else {
+                alert('Failed to update data');
+            }
+        };
+        xhr.send(JSON.stringify(newData));
+        console.log(xhr.send)
+    });
+});
+</script>
+
+</body>
+</html>

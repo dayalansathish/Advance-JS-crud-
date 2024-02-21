@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance js</title>
+    <link rel="stylesheet" href="advance.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="advance.js" defer></script>
+    <style>
+        /* CSS for toast container and toast */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    
+        .toast {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center text-warning">Advance Data</h1>
+        <!-- <div class="form">
+            <h1 class="text-center">Advance JS</h1>
+            <form method="post" action="#" id="form" class="row w-50 m-auto border border-dark-subtle rounded-3 mt-5"
+                novalidate>
+                <div class="col-6 my-2 input-all">
+                    <label class="py-2" for="fName">First Name :</label>
+                    <input type="text" id="fName" name="fName" value="" class="control rounded border border-secondary" required>
+                </div>
+                <div class="col-6 my-2 input-all">
+                    <label class="py-2" for="lName">Last Name :</label>
+                    <input type="text" id="lName" name="lName" value="" class="control rounded border border-secondary" required>
+                </div>
+                <div class="col-6 my-2 input-all">
+                    <label class="py-2" for="email">Email :</label>
+                    <input type="email" id="email" name="email" class="control rounded border border-secondary" required>
+                </div>
+                <div class="col-6 my-2 input-all">
+                    <label class="py-2" for="password">Password :</label>
+                    <input type="password" id="password" name="password" class="control rounded border border-secondary" required>
+                </div>
+                 <div class="col-6 my-2 input-all">
+                    <label class="py-2" for="confirmPassword">Confirm Password :</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="control" required>
+                    <div  class="error"></div>
+                 <div class="valid-feedback">Looks Good</div>
+                    <div class="invalid-feedback">Enter Your ConfirmPassword</div>
+                </div> 
+                <div class="d-flex justify-content-center my-3">
+                    <button type="submit" class="btn btn-sm btn-warning fw-semibold">Submit</button>
+                </div>
+            </form>
+            </d>
+        </div> -->
+        <div class="mt-5">
+            <table id="tableData" class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Actions</th>
+                <!-- <th scope="col">Confirm Password</th> -->
+              </tr>
+            </thead>
+            <tbody id="table-body">
+                 <!-- capture and list the data  -->
+            </tbody>
+          </table>
+        </div>
+
+        <div id="toast-container"></div>
+
+        <!-- edit function -->
+
+        
+        
+</body>
+
+</html>
